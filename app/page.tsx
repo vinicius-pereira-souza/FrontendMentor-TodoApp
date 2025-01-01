@@ -1,6 +1,7 @@
-// import BgImage from "./ui/bg-image";
-
+import Form from "./ui/form";
 import Header from "./ui/header";
+
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -11,21 +12,31 @@ export default function Home() {
       <div className="w-full h-[200px] lg:h-[300px] bg-mobile-light dark:bg-mobile-dark lg:bg-desktop-light dark:lg:bg-desktop-dark bg-no-repeat bg-center bg-cover absolute top-0 left-0" />
       <main className="flex-1 max-w-[540px] relative">
         <Header />
-        <form action="">
-          <div className="min-h-[60px] rounded-md flex items-center gap-x-6 py-[18px] px-5 bg-white dark:bg-dark-blue-darker">
-            <label
-              className="block w-[23px] h-[23px] rounded-full border border-dark-blue-medium"
-              htmlFor="description"
-            ></label>
-            <input
-              type="text"
-              name="description"
-              id="description"
-              placeholder="Create a new todo..."
-              className="outline-none bg-transparent text-dark-blue-light text-lg leading-none"
-            />
+        <Form />
+        <div>
+          <ul className="dark:bg-dark-blue-darker rounded-md my-4">
+            <li>
+              <div>check</div>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+              <button>
+                <Image
+                  src={"/images/icon-cross.svg"}
+                  alt="icon delected"
+                  width={18}
+                  height={18}
+                />
+              </button>
+            </li>
+          </ul>
+          <div className="dark:bg-dark-blue-darker rounded-md">
+            <button>All</button>
+            <button>Active</button>
+            <button>Completed</button>
           </div>
-        </form>
+        </div>
+        <footer className="text-center mt-11 text-sm">
+          <p>Drag and drop to reorder list</p>
+        </footer>
       </main>
     </div>
   );

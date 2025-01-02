@@ -42,7 +42,7 @@ export function ButtonTaskItemUnchecked() {
 export function ButtonTaskItemChecked() {
   return (
     <>
-      <button className="w-[25px] h-[25px] flex items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-purple-500">
+      <button className="w-5 lg:w-[25px] h-5 lg:h-[25px] flex items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-purple-500">
         <Image
           src={"/images/icon-check.svg"}
           alt="icon check"
@@ -57,7 +57,7 @@ export function ButtonTaskItemChecked() {
 export function ButtonTaskItemDelect() {
   return (
     <>
-      <button>
+      <button className="w-3">
         <Image
           src={"/images/icon-cross.svg"}
           alt="icon delected"

@@ -6,8 +6,6 @@ import Image from "next/image";
 export function ButtonsWitchTheme() {
   const { theme, changeToggleThemeValue } = useTheme();
 
-  console.log(theme);
-
   return (
     <>
       <button onClick={() => changeToggleThemeValue()}>

@@ -42,7 +42,7 @@ export function ButtonTaskItemUnchecked() {
 export function ButtonTaskItemChecked() {
   return (
     <>
-      <button className="w-5 lg:w-[25px] h-5 lg:h-[25px] flex items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-purple-500">
+      <button className="w-5 md:w-[25px] h-5 md:h-[25px] flex items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-purple-500">
         <Image
           src={"/images/icon-check.svg"}
           alt="icon check"
@@ -66,5 +66,17 @@ export function ButtonTaskItemDelect() {
         />
       </button>
     </>
+  );
+}
+
+export function ButtonsFilterTask({ styles }: { styles?: string }) {
+  return (
+    <div
+      className={`font-bold flex-1 flex items-center justify-center gap-x-4 ${styles}`}
+    >
+      <button className="text-blue-600">All</button>
+      <button>Active</button>
+      <button>Completed</button>
+    </div>
   );
 }

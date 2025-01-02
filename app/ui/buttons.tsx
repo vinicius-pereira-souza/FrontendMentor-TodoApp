@@ -3,7 +3,7 @@
 import { useTheme } from "../lib/context";
 import Image from "next/image";
 
-export function ButtonsWitchTheme() {
+export function ButtonWitchTheme() {
   const { theme, changeToggleThemeValue } = useTheme();
 
   return (
@@ -31,7 +31,7 @@ export function ButtonsWitchTheme() {
   );
 }
 
-export function ButtonNoteUnchecked() {
+export function ButtonTaskItemUnchecked() {
   return (
     <>
       <button className="block w-[25px] h-[25px] rounded-full dark:bg-dark-blue-darker border border-dark-blue-medium mr-[25px]"></button>
@@ -39,7 +39,7 @@ export function ButtonNoteUnchecked() {
   );
 }
 
-export function ButtonNoteChecked() {
+export function ButtonTaskItemChecked() {
   return (
     <>
       <button className="w-[25px] h-[25px] flex items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-purple-500">
@@ -54,7 +54,7 @@ export function ButtonNoteChecked() {
   );
 }
 
-export function ButtonNoteDelect() {
+export function ButtonTaskItemDelect() {
   return (
     <>
       <button>

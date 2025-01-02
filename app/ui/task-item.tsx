@@ -1,11 +1,11 @@
 import clsx from "clsx";
 import {
-  ButtonNoteChecked,
-  ButtonNoteUnchecked,
-  ButtonNoteDelect,
+  ButtonTaskItemChecked,
+  ButtonTaskItemUnchecked,
+  ButtonTaskItemDelect,
 } from "./buttons";
 
-export default function Note({
+export default function TaskItem({
   text,
   status,
 }: {
@@ -15,7 +15,7 @@ export default function Note({
   return (
     <>
       <li className="flex items-center gap-x-[25px] p-5 border-b border-b-light-gray-light dark:border-b-dark-blue-darkest2">
-        {status ? <ButtonNoteChecked /> : <ButtonNoteUnchecked />}
+        {status ? <ButtonTaskItemChecked /> : <ButtonTaskItemUnchecked />}
         <p
           className={clsx(
             `flex-1 text-nowrap text-lg overflow-x-hidden font-normal text-ellipsis select-none leading-none `,
@@ -24,7 +24,7 @@ export default function Note({
         >
           {text}
         </p>
-        <ButtonNoteDelect />
+        <ButtonTaskItemDelect />
       </li>
     </>
   );

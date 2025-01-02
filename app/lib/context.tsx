@@ -22,10 +22,6 @@ export function ThemeContextProvider({
     const storedTheme: string | null = localStorage.getItem("theme");
 
     if (storedTheme) setTheme(storedTheme);
-
-    // const html = document.querySelector("html");
-
-    // html!.classList.toggle(storedTheme === "light" ? "" : "dark");
   }, []);
 
   const changeToggleThemeValue = (): void => {

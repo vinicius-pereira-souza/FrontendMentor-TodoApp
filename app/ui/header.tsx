@@ -1,4 +1,4 @@
-import { ButtonsWitchTheme } from "./buttons";
+import { ButtonWitchTheme } from "./buttons";
 
 export default function Header() {
   return (
@@ -6,7 +6,7 @@ export default function Header() {
       <h1 className="text-[27px] lg:text-[40px] tracking-[10px] lg:tracking-[15px]">
         Todo
       </h1>
-      <ButtonsWitchTheme />
+      <ButtonWitchTheme />
     </header>
   );
 }

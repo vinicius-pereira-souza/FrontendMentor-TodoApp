@@ -1,6 +1,6 @@
 import Form from "./ui/form";
 import Header from "./ui/header";
-import Note from "./ui/note";
+import TaskItem from "./ui/task-item";
 
 export default function Home() {
   return (
@@ -14,12 +14,22 @@ export default function Home() {
         <Form />
         <div className="lg:bg-white dark:bg-dark-blue-darker rounded-md my-4">
           <ul>
-            <Note key={1} text={"Complete online JavaScript"} status={true} />
+            <TaskItem
+              key={1}
+              text={"Complete online JavaScript"}
+              status={true}
+            />
           </ul>
           <div>
-            <button>All</button>
-            <button>Active</button>
-            <button>Completed</button>
+            <p>
+              <span>5</span> item left
+            </p>
+            <div>
+              <button>All</button>
+              <button>Active</button>
+              <button>Completed</button>
+            </div>
+            <button>Clear Completed</button>
           </div>
         </div>
         <footer className="text-center mt-11 text-sm text-dark-blue-medium">

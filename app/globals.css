@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  .noteMarkedComplement {
+    @apply line-through text-light-gray-light dark:text-dark-blue-darkest2;
+  }
+
+  .incompleteNote {
+    @apply text-light-gray-darkest dark:text-dark-blue-light;
+  }
+}

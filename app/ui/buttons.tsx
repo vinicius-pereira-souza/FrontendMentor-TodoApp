@@ -42,12 +42,27 @@ export function ButtonNoteUnchecked() {
 export function ButtonNoteChecked() {
   return (
     <>
-      <button className="w-[25px] h-[25px] flex items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-purple-500 mr-[25px]">
+      <button className="w-[25px] h-[25px] flex items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-purple-500">
         <Image
           src={"/images/icon-check.svg"}
           alt="icon check"
           width={11}
           height={9}
+        />
+      </button>
+    </>
+  );
+}
+
+export function ButtonNoteDelect() {
+  return (
+    <>
+      <button>
+        <Image
+          src={"/images/icon-cross.svg"}
+          alt="icon delected"
+          width={18}
+          height={18}
         />
       </button>
     </>

@@ -22,7 +22,7 @@ export default {
             lighter: "#ebecf4", // hsl(236, 33%, 92%)
             light: "#d2d3db", // hsl(233, 11%, 84%)
             dark: "#9699a3", // hsl(236, 9%, 61%)
-            darkest: "#575a64", // hsl(235, 19%, 35%)
+            darkest: "#484B6A", // hsl(235, 19%, 35%)
           },
         },
         dark: {

@@ -1,3 +1,4 @@
+import { ButtonNoteChecked } from "./ui/buttons";
 import Form from "./ui/form";
 import Header from "./ui/header";
 
@@ -15,9 +16,11 @@ export default function Home() {
         <Form />
         <div>
           <ul className="dark:bg-dark-blue-darker rounded-md my-4">
-            <li>
-              <div>check</div>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            <li className="flex items-center p-5">
+              <ButtonNoteChecked />
+              <p className="text-nowrap ">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
               <button>
                 <Image
                   src={"/images/icon-cross.svg"}

@@ -2,12 +2,12 @@
 import { useState, useEffect, createContext, use } from "react";
 
 type ContextType = {
-  theme: "light" | "dark";
+  theme: string | null;
   changeToggleThemeValue: () => void;
 };
 
 export const ThemeContext = createContext<ContextType>({
-  theme: "light",
+  theme: "",
   changeToggleThemeValue: () => {},
 });
 
@@ -16,22 +16,21 @@ export function ThemeContextProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<string>("dark");
 
   useEffect(() => {
-    const storedTheme = localStorage.getItem("theme");
-    if (storedTheme === "light" || storedTheme === "dark") {
-      setTheme(storedTheme);
-    } else {
-      localStorage.setItem("theme", "light");
-      setTheme("light");
-    }
+    const storedTheme: string | null = localStorage.getItem("theme");
+
+    if (storedTheme) setTheme(storedTheme);
   }, []);
 
   const changeToggleThemeValue = (): void => {
-    setTheme((previousState) => (previousState == "light" ? "dark" : "light"));
+    setTheme((previousState) => (previousState === "light" ? "dark" : "light"));
 
     localStorage.setItem("theme", theme);
+
+    const html = document.querySelector("html");
+    html!.classList.toggle("dark");
   };
 
   return (

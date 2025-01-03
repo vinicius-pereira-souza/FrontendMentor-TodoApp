@@ -1,6 +1,8 @@
+import { handleSaveTaskForm } from "@/app/lib/actions";
+
 export default function Form() {
   return (
-    <form action="">
+    <form action={handleSaveTaskForm}>
       <div className="min-h-[50px] lg:min-h-[60px] rounded-md flex items-center gap-x-6 py-3 lg:py-[18px] px-5 bg-white dark:bg-dark-blue-darker transition-all">
         <label
           className="block w-[20px] lg:w-[23px] h-[20px] lg:h-[23px] rounded-full border border-dark-blue-medium"

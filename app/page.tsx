@@ -1,7 +1,9 @@
 import Form from "./ui/form";
 import Header from "./ui/header";
-import TaskItem from "./ui/task-item";
-import { ButtonsFilterTask } from "./ui/buttons";
+
+import { fetchAllTasks } from "@/app/lib/data";
+import TasksList from "./ui/tasks-list";
+
 
 export default function Home() {
   return (
@@ -14,17 +16,13 @@ export default function Home() {
         <Header />
         <Form />
         <div
-          className="bg-white dark:bg-dark-blue-darker rounded-md my-4 shadow-xl dark:shadow-md
-         shadow-light-gray-light dark:shadow-gray-950 z-50"
+
+          className="bg-white dark:bg-dark-blue-darker rounded-md my-4 shadow-xl dark:shadow-lg
+         shadow-light-gray-light dark:shadow-gray-950"
         >
-          <ul className="rounded-md md:rounded-none">
-            <TaskItem
-              key={1}
-              text={"Complete online JavaScript"}
-              status={true}
-            />
-          </ul>
-          <div className="flex items-center justify-between gap-x-3 flex-nowrap text-xs md:text-sm py-5 px-6 text-dark-blue-dark">
+          <TasksList taskPromise={fetchAllTasks()} />
+          <div className="flex items-center justify-between gap-x-3 flex-nowrap text-xs lg:text-sm py-5 px-6 text-dark-blue-dark">
+
             <p>
               <span>0</span> item left
             </p>

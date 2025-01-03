@@ -10,4 +10,12 @@
   .incompleteNote {
     @apply text-light-gray-darkest dark:text-dark-blue-light;
   }
+
+  .buttontTaskCompleted {
+    @apply w-5 lg:w-[25px] h-5 lg:h-[25px] flex items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-purple-500 mr-[25px];
+  }
+
+  .buttontTaskIncomplete {
+    @apply block w-[25px] h-[25px] rounded-full dark:bg-dark-blue-darker border border-dark-blue-medium mr-[25px];
+  }
 }

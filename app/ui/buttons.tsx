@@ -42,6 +42,7 @@ export function ButtonTaskItemWitchChecked({
 }) {
   return (
     <>
+
       <button
         onClick={async () => await updateTaskCompletionStatus({ id, status })}
         className={clsx({
@@ -59,10 +60,10 @@ export function ButtonTaskItemWitchChecked({
         ) : (
           ""
         )}
-      </button>
     </>
   );
 }
+
 
 export function ButtonTaskItemDelect({ id }: { id: string }) {
   return (
@@ -81,5 +82,17 @@ export function ButtonTaskItemDelect({ id }: { id: string }) {
         />
       </button>
     </>
+  );
+}
+
+export function ButtonsFilterTask({ styles }: { styles?: string }) {
+  return (
+    <div
+      className={`font-bold flex-1 flex items-center justify-center gap-x-4 ${styles}`}
+    >
+      <button className="text-blue-600">All</button>
+      <button>Active</button>
+      <button>Completed</button>
+    </div>
   );
 }

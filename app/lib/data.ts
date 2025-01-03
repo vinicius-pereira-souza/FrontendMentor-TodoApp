@@ -1,8 +1,3 @@
-// salvar dado -> saveNewTask
-// buscar todos os dados -> fetchAllTasks
-// marcar/descarmar como concluido -> updateTaskCompletionStatus
-// excluir um/mutiplos dados atraves dos ids salvos em um array -> deleteTaskByIds
-
 type Task = {
   description: FormDataEntryValue | null;
   status: boolean;
@@ -22,6 +17,42 @@ export async function fetchAllTasks() {
   try {
     const data = await fetch("http://localhost:3001/tasks");
     return data.json();
+  } catch (error) {
+    console.log(error);
+    return;
+  }
+}
+
+export async function updateTaskCompletionStatus(task: {
+  id: string;
+  status: boolean;
+}) {
+  try {
+    await fetch(`http://localhost:3001/tasks/${task.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ status: !task.status }),
+    });
+    return;
+  } catch (error) {
+    console.log(error);
+    return;
+  }
+}
+
+export function deleteTaskByIds(ids: string[]) {
+  try {
+    ids.forEach(async (id: string) => {
+      await fetch(`http://localhost:3001/tasks/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    });
+    return;
   } catch (error) {
     console.log(error);
     return;

@@ -19,6 +19,7 @@ export default function TasksList({
         {tasks.map((task: Task) => (
           <TaskItem
             key={task.id}
+            id={task.id}
             text={task.description}
             status={task.status}
           />

@@ -13,7 +13,7 @@ export default function Form() {
           name="description"
           id="description"
           placeholder="Create a new todo..."
-          className="outline-none bg-transparent text-dark-blue-light text-sm lg:text-lg leading-none"
+          className="outline-none bg-transparent text-light-gray-darkest dark:text-dark-blue-light text-sm lg:text-lg leading-none w-full"
         />
       </div>
     </form>

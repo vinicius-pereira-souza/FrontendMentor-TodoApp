@@ -14,7 +14,7 @@ export default function Home() {
         <Header />
         <Form />
         <div
-          className="lg:bg-white dark:bg-dark-blue-darker rounded-md my-4 shadow-xl dark:shadow-lg
+          className="bg-white dark:bg-dark-blue-darker rounded-md my-4 shadow-xl dark:shadow-lg
          shadow-light-gray-light dark:shadow-gray-950"
         >
           <TasksList taskPromise={fetchAllTasks()} />

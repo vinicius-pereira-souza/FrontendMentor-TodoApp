@@ -16,21 +16,35 @@ export function ThemeContextProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [theme, setTheme] = useState<string>("dark");
+  const [theme, setTheme] = useState<string>("");
 
   useEffect(() => {
     const storedTheme: string | null = localStorage.getItem("theme");
 
-    if (storedTheme) setTheme(storedTheme);
+    if (!storedTheme) {
+      localStorage.setItem("theme", "light");
+      setTheme("light");
+    }
   }, []);
+
+  useEffect(() => {
+    const storedTheme: string | null = localStorage.getItem("theme");
+
+    if (storedTheme) {
+      const html = document.querySelector("html");
+      setTheme(storedTheme);
+      html?.classList.toggle(storedTheme);
+    }
+  }, [theme]);
 
   const changeToggleThemeValue = (): void => {
     setTheme((previousState) => (previousState === "light" ? "dark" : "light"));
 
-    localStorage.setItem("theme", theme);
-
     const html = document.querySelector("html");
+    html!.classList.toggle("light");
     html!.classList.toggle("dark");
+
+    localStorage.setItem("theme", theme);
   };
 
   return (
